@@ -4,6 +4,7 @@
 
 * [About](#about)
 * [Technologies Used](#technologies-used)
+* [Hosting](#hosting)
 
 ## About
 
@@ -15,3 +16,9 @@ This website is a portfolio which showcases my work that I have done during my M
 * SQL
 * MS Office 365 (MS Word, MS Excel, MS PowerPoint), SharePoint
 * JIRA, Confluence : Used to effectively manage project
+
+## Hosting
+
+This website is hosted using Github Pages. Click below to visit the site:
+
+https://pri-canix.github.io/BA_Portfolio/
