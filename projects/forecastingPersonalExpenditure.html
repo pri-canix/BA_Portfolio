@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-R63DJFHTJT"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'G-R63DJFHTJT');
+      </script>    
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="../css/portfolio.css" rel="stylesheet">
+      <link rel="icon" type="image/x-icon" href="../assets/logo2.svg">
+      <title>Forecasting Projects</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+         <div class="container">
+            <a href="../index.html"><img src="../assets/logo2.svg" width="48" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link folio-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link folio-link" href="../index.html#portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link folio-link" href="../cv/Priyanka_Ukande_CV.pdf" target="_blank">Resume</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="btn btn-cta" href="#footer">
+                     Let's talk
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      
+      <section id="dream-header">
+        <div class="container">
+            <div class="row px-2 py-4">
+                <h5 class="dream-title">Forecasting Projects</h5>
+                <p class="dream-caption">Forecasting the Personal Consumption Expenditure in the United States.</p>
+            </div>
+        </div>
+        <div class="forecast-bg"></div>            
+      </section>
+
+      <!-- body content -->
+      <section id="main-content">
+            <div class="row">
+                <div class="dream-intro">
+                    <p>In this report, we explore a time series forecasting project aimed at predicting the United States Personal Consumption Expenditure (PCE) using monthly data from January 1959 to November 2023. We applied three advanced statistical models: a Simple Forecasting Model, an Exponential Smoothing Model, and an ARIMA (Autoregressive Integrated Moving Average) Model, to evaluate their performance and identify the most accurate method for predicting PCE.</p>
+                    <p>Our analysis included data preprocessing to seasonally adjust the dataset and a comparative assessment of model efficacy. The results offer valuable insights into consumer spending patterns and feature one-step-ahead rolling forecasts for future PCE values. Join us as we discuss the methodologies employed and the implications of our findings for economic forecasting and decision-making.</p> 
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div>
+                        <p class="dream-subhead">project brief</p>
+                        <div class="dream-text">
+                            <p><span>Role -</span> Business Analyst</p>
+                            <p><span>Skills -</span> Predictive Forecasting, Data Analytics, R</p>
+                            <p><span>Timeline -</span> 2 month</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="dream-subhead mt-4">Data Preparation</p>
+                        <p class="dream-text">
+                            The data source for this analysis consists of monthly Personal Consumption Expenditure (PCE) data covering the period from January 1959 to November 2023. 
+                            The dataset includes 779 observations organized into two columns: Date and PCE. 
+                            To ensure accurate forecasting, the data underwent preprocessing to adjust for seasonal fluctuations, resulting in a seasonally adjusted time series that provides a clearer view of underlying consumer spending trends.
+                        </p>        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <p class="dream-subhead">Interpolation:</p>
+                <p class="dream-text">
+                    Observing the data, it was found that about 43 values were missing for PCE, which is about 5.5 percentage of the dataset.
+                </p> 
+                <div class="code-snippet">
+                    # Identifying the rows with missing PCE values<br>
+                    missing_rows &lt;- which(rowSums(is.na(pce_data)) &gt; 0)<br>
+                    print(length(missing_rows))<br>
+                    [1] 43
+                </div>
+                <p class="dream-text">Figure 1: Missing values.</p>
+                
+                <p class="dream-text">
+                    Imputation was required to deal with it, as we cannot continue the analysis with missing values in the dataset. The package ‘imputeS’ and its function ‘na_interpolation()’ were used for it. This function was used because it interpolates the missing values in a linear fashion and preserves the temporal structure of the data.
+                </p> 
+                <div class="code-snippet">
+                    # Imputing the missing values<br>
+                    pce_data &lt;- na_interpolation(pce_data)<br>
+                    missing_rows &lt;- which(rowSums(is.na(pce_data)) &gt; 0)<br>
+                    print(length(missing_rows))<br>
+                    [1] 0
+                </div>
+                <p class="dream-text">Figure 2: Imputed data.</p>
+                <p class="dream-text">The dataset was ready for further analysis, building models, and forecasting once the missing values were imputed.</p>
+            </div>
+
+            <div class="row mt-5">
+                <p class="dream-subhead">Data Split:</p>
+                <div class="row technical feasibility">
+                    <div class="col-md-8"><p>Based on the Pareto principle, the dataset was then split in an 80:20 ratio and the last 20 percent values were set aside as the test set. 
+                        The initial 80 percent of the dataset was used to train the different models and to evaluate their performances.</p>
+                    </div>
+                    <div class="code-snippet">
+                        # Selecting initial 80% of the data as Training set<br>
+                        train_size &lt;- floor(0.8 * length(pce_ts))<br>
+                        pce_train &lt;- head(pce_ts, train_size)<br>
+                        length(pce_train)<br>
+                        [1] 623<br><br>
+                
+                        # Setting remaining 20% of the data as Test set<br>
+                        pce_test &lt;- tail(pce_ts, length(pce_ts) - train_size)<br>
+                        length(pce_test)<br>
+                        [1] 156
+                    </div>
+                    <div class="col-md-8"><p>Figure 3: Training and test sets.</p>
+                    </div>    
+                    <div class="col-md-8">
+                        <p>
+                            Since the data was collected monthly, frequency of 12 was used to plot the time-series.
+                            The plot of PCE values with time showed an upward trend, indicating an increase in the consumption expenditure. 
+                            A sharp dip was observed in the PCE value around the early to mid 2020. However, except the dip, the overall trend appears to be continual.
+                            Decomposing a seasonally adjusted dataset with a multiplicative model captures irregularities, and changing patterns, enhancing forecasting accuracy.
+                        </p>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-7">
+                            <img src="../assets/project/expenditureForecast/personalConsumputionGraph.png" alt="Personal Comsumption of USA per year graph." height="480" class="img-fluid">
+                        </div>
+                        <p class="dream-text">Figure 4: PCE time-series.</p>
+                    </div> 
+                    <div class="col-md-8">
+                        <p>
+                            The seasonally adjusted dataset was then decomposed with a multiplicative model to observe the irregularities and varying trends, to enhance the forecasting accuracy.
+                            An evident upward trend was observed in the decomposed time-series, along with a random effect around the year 2020.
+                        </p>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-md-7">
+                            <img src="../assets/project/expenditureForecast/decomposedTimeSeries.png" alt="Personal Comsumption of USA per year graph." height="480" class="img-fluid">
+                        </div>
+                        <p class="dream-text">Figure 5: Decomposed time-series.</p>
+                    </div>                       
+                </div>                
+            </div>
+
+            <div class="row mt-6">
+                <p class="dream-subhead">Simple forecasting using Drift Model</p>
+                <p>The drift model was chosen as the simple forecasting model over the average, naïve and seasonal naïve models as it captures the dynamic upward or downward trends, and seasonal fluctuations effectively. Also, since the provided dataset was already seasonally adjusted, it was needless to consider seasonal patterns explicitly by using the seasonal naïve model.</p>
+                <p>Furthermore, the average and naïve models do not accommodate residual seasonality and were likely to produce a biased forecast ignoring the existing trend in the data, contrary to the drift model. The drift model substantially addresses both short-term seasonality and long-term trends, and thus is more suitable for the PCE dataset having non-linear growth rate.</p>
+                <p>The naïve method replaces the missing values with the last observed values, hence missing the trend. While the drift method considers both trend and residual seasonality for the same, ensuring precise predictions and forecasts. Another advantage of using the drift model over the other models was its resilience to outliers using robust regression techniques.</p>    
+                <div class="row justify-content-between">
+                    <div class="col-md-7">
+                        <img src="../assets/project/expenditureForecast/pceDriftModel.png" alt="GAP Analysis" height="480" class="img-fluid">
+                        <p class="dream-text">Figure 6: PCE forecast by Drift model.</p>
+                    </div>
+                </div>
+                <p>The drift model performed exceptionally well on the training set having high accuracy metrics like low RMSE, MAE, and MAPE, and minimal errors. Although, the efficiency of the model decreased significantly on the test set, demonstrating a notable increase in errors and decline in the accuracy metrics. This discrepancy in the forecast accuracy of the training and test models indicates potential overfitting during the training of the model. Therefore, the drift model requires an enhanced generalisation method to mitigate the discrepancy between the performance of the training and test sets.</p>
+            </div>
+
+            <div class="row mt-7">
+                <p class="dream-subhead">Exponential Smoothing through Holt’s Linear Trend Model</p>
+                <p>The Exponential models are preferred when the time-series shows trend, or seasonal patterns, or both, preferably when the exhibited patterns change over time and are not stable. Out of the three types of exponential models, the triple exponential smoothing model or Holt-Winters is regarded the best as it can handle both trend and seasonal components simultaneously. The single or simple exponential smoothing is selected when the data only has a pattern, with no trend or seasonality. Meanwhile, the second-order exponential smoothing or the Holt’s trend model is considered suitable for time-series having a trend but no seasonality.</p>
+                <p>In this scenario, Holt’s trend model was preferred as the data is seasonally adjusted but has a trend. Also, since the trend of PCE in the dataset was not constant, but rather exponential, ‘multiplicative’ seasonal component was applied, instead of the default ‘additive’ component.</p>
+                <div class="row justify-content-between">
+                    <div class="col-md-7">
+                        <img src="../assets/project/expenditureForecast/holtsLinearModel.png" alt="GAP Analysis" height="480" class="img-fluid">
+                        <p class="dream-text">Figure 7: Holt’s exponential smoothing on PCE dataset.</p>
+                    </div>
+                </div>
+                <p>The Holt’s trend model preformed significantly well for both the training and test sets, exhibiting admirable accuracy metrics with comparatively low errors. Although, the accuracy exhibited by the model for the test set was slightly lower than that for the training set, but the difference was minute. The minor variations in the forecasting accuracy, and a consistent overall performance, suggests that the model was able to generalise the data effectively.</p>
+            </div>
+
+            <div class="row mt-8">
+                <p class="dream-subhead">ARIMA Model</p>
+                <p>The ARIMA model is preferred when the time-series data is stationary or can be made stationary by differencing. Differencing is the process by which time-series showcasing trends are made stationary by taking differences between consecutive values. When the data is stationary, ARIMA captures the trends, seasonality, and even autocorrelation structures credibly. This model excels in capturing linear structures and forecasting short-term values.
+                    Uncertainty of a trend increases with time, hence the long-term predictions made using the ARIMA model are not quite effective. Moreover, ARIMA models need robust pre-processing of data and handling of outliers, as they are sensitive to missing values, outliers, and noise in the data, which can distort the parameter estimates, leading to inaccurate forecasts.</p>
+                <p>In a trended time-series, the observations closer in time also tend to be closer in value. Thus, autocorrelation values for short intervals are majorly high and positive and decreases as the time interval between observations is increased. For time-series analysis, ARIMA uses Autocorrection Function (ACF) and Partial Autocorrection Function (PACF) to identify the moving average order (Romer, et al., 2006). While ACF measures the correlation between time-series and its lagged values, PACF measures the same but after removing its immediate lags.
+                    Comparison of the autocorrelation plot of the training and test sets depict a decline in the correlation with time, suggesting that the dependency of PCE values on immediate values has decreased.</p>
+                <div class="row justify-content-between">
+                    <div class="col-md-7">
+                        <img src="../assets/project/expenditureForecast/trainingTestAutoCorelation.png" alt="GAP Analysis" height="480" class="img-fluid">
+                        <p class="dream-text">Figure 8: Autocorrelation of the training and test sets.</p>
+                    </div>
+                </div>
+                <p>Applying the ‘auto.arima()’ function, ARIMA with order 3,2,2 was found best suited to the training set. The model depicted creditable performance on both training and test sets, displaying high accuracy metrics and low errors. Like the Holt’s exponential model, ARIMA observed a marginal decrease in accuracy over the test model, as compared to the training model. The overall consistency of the model describes its robustness for forecasting future values.</p>
+            </div>
+            
+            <div class="row mt-9">
+                <p class="dream-subhead">Choosing the Best model</p>
+                <p>To select the best model for forecasting PCE, accuracy of the models was compared. Mean error (ME), root mean squared error (RMSE), mean absolute error (MAE), mean percentage error (MPE), mean absolute percentage error (MAPE), mean absolute scaled error (MASE), and autocorrelation of errors at lag 1 (ACF1) values of the models were contrasted for this, and preference was given to the one with lowest error values.</p>
+                <div class="row justify-content-between">
+                    <div class="col-md-7">
+                        <img src="../assets/project/expenditureForecast/modelCompare.png" alt="GAP Analysis" height="480" class="img-fluid">
+                        <p class="dream-text">Figure 9: Accuracy comparison of the models.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-md-7">
+                        <img src="../assets/project/expenditureForecast/modelComparePlot.png" alt="GAP Analysis" height="480" class="img-fluid">
+                        <p class="dream-text">Figure 10: Comparing plot of the models against real values.</p>
+                    </div>
+                </div>
+            </div>            
+        <p class="dream-subhead">Conclusion</p>
+        <p class="dream-text">Based on the comparisons from Figure 9 and Figure 10, the drift model displays significant accuracy over the training set but struggles over the test set. Although the dataset observes a non-linear upward trend, and ARIMA model performs commendably on both the data sets, the Holt’s exponential smoothing trend model displays a comparatively superior performance across all metrics. Therefore, due to the exemplary performance and lower risk of overfitting, the Holt’s exponential model was chosen for predicting the value of PCE in the US. Based on it, the expected US PCE for the upcoming months are as follows.</p>
+        <div class="row justify-content-between">
+            <div class="col-md-7">
+                <img src="../assets/project/expenditureForecast/forecastComingMonths.png" alt="GAP Analysis" height="480" class="img-fluid">
+                <p class="dream-text">Figure 11: Forecast for forth-coming months.</p>
+            </div>
+        </div>
+        <p class="bg-light border" style="width:480px">One-step-ahead rolling forecast:</p>
+        <p class="dream-text">Since the initial values were re-estimated while applying the Holt’s model on the test set, one-step-ahead rolling forecast was done without re-estimating the parameters. This forecast predicts the value of the next period (h=1). Applying one-step-ahead, the value of October 2024 was found the same as predicted by the Holt’s model.</p>
+        <div class="row justify-content-between">
+            <div class="col-md-7">
+                <img src="../assets/project/expenditureForecast/oneStepRolling.png" alt="GAP Analysis" height="480" class="img-fluid">
+                <p class="dream-text">Figure 12: One-step-ahead rolling forecast.</p>
+            </div>
+        </div>
+        </section>
+
+        <section>
+            <div class="text-center">
+               <img src="../assets/divider.svg" alt="Divider" class="img-fluid">  
+               <p class="go-back h5 sub-head">Care to see another project?</p>
+               <a class="back-btn btn mt-2 mb-4" href="../index.html#portfolio">Browse Portfolio</a>
+            </div>
+         </section>
+      <!-- footer - CTAs -->
+      <footer id="footer">
+        <div class="container text-center">
+           <p class="foot-subhead">Come say hi!</p>
+           <p class="foot-head">Let's talk</p>
+           <div>
+              <a class="btn foot-btn" href="https://www.linkedin.com/in/priyanka-ukande/" target="_blank">
+                 <img src="../assets/linkedin.svg" alt="Linkedin" class="linkedin-icon"><br>
+                 Let's Connect
+              </a>
+
+              <a class="btn foot-btn" href="mailto:prianka.ukande@gmail.com" target="_blank">
+                 <img src="../assets/gmail.svg" alt="Gmail" class="gmail-icon"><br>
+                 Drop a mail
+              </a>
+           </div>
+        </div>
+     </footer>

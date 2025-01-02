@@ -299,8 +299,15 @@ video {
 .tap-bg {
 	background-image: url("../assets/project/problemDiagnosis/launchInfographic.svg");
 	background-size: cover;
-	height: 650px;
+	height: 470px;
 	background-position: center;
+}
+
+.forecast-bg {
+	background-image: url("../assets/infographics/expenditureForecasting/expenditureForecasting.svg");
+	background-size: cover;
+	background-position: center;
+	height: 470px;
 }
 
 #main-content {
@@ -432,7 +439,15 @@ p>span {
 	padding: 40px;
 
 }
-
+.code-snippet {
+	background-color: #d0e8ff; /* Light blue background */
+	color: #000080; /* Dark blue text */
+	font-family: Consolas, "Courier New", monospace; /* Monospace font */
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	white-space: pre; /* Preserve spacing and line breaks */
+}
 @media screen and (max-width: 550px) {
 	#main-content, .main-container {
 		padding: 40px;
