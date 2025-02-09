@@ -241,12 +241,21 @@ video {
 	color: #fff;
 	border-radius: 50%;
 }
+
 #tap-header {
 	background-color: #FFFAE0;
 }
 
+#gap-header {
+	background-color: #F2F0ED;
+}
+
 #dream-header {
 	background-color: #E4FBEF;
+}
+
+#problem-header {
+	background-color: #EBF3F4;
 }
 
 .dream-title, .tap-title {
@@ -310,6 +319,13 @@ video {
 	height: 470px;
 }
 
+.universalExport-bg {
+	background-image: url("../assets/infographics/universalExport/1.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 470px;
+}
+
 #main-content {
 	padding: 40px 200px;
 }
@@ -339,7 +355,7 @@ video {
 	background: #FFF1E0;
 }
 
-.dream-subhead, .design-process
+.dream-subhead, .dream-subhead2, .design-process
 {
 font-weight: 700;
 letter-spacing: 0.2em;
@@ -349,6 +365,10 @@ color: rgba(0, 0, 0, 0.72);
 
 .dream-subhead {
 	font-size: 20px;
+}
+
+.dream-subhead2 {
+	font-size: 28px;
 }
 
 .design-process {

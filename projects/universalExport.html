@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-R63DJFHTJT"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'G-R63DJFHTJT');
+      </script>    
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="../css/portfolio.css" rel="stylesheet">
+      <link rel="icon" type="image/x-icon" href="../assets/logo2.svg">
+      <title>Forecasting Projects</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <!-- navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+         <div class="container">
+            <a href="../index.html"><img src="../assets/logo2.svg" width="48" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link folio-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link folio-link" href="../index.html#portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link folio-link" href="../cv/Priyanka_Ukande_CV.pdf" target="_blank">Resume</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="btn btn-cta" href="#footer">
+                     Let's talk
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      
+      <section id="tap-header">
+        <div class="container">
+            <div class="row px-2 py-4">
+                <h5 class="dream-title">Year-End Sales and Performance Analysis for Universal Export</h5>
+                <p class="dream-caption">Analyzing Year-End Sales Performance to Drive Strategic Decision-Making for Universal Export.</p>
+            </div>
+        </div>
+        <div class="universalExport-bg"></div>            
+      </section>
+
+      <!-- body content -->
+      <section id="main-content">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                <p class="dream-subhead">Data Extraction and Handling</p>
+                    <p>The ‘GarmentFactoryDataset.zip’ file from Universal Export included five data files in various formats, covering details on the company’s transactions, customers, products, logistics, and salespeople. While the ‘xlsx’ and ‘csv’ files were readily accessible in Power BI, careful extraction was required for other formats. For example, handling files like ‘Salespeople.json’ and ‘Logistics.txt’ required using specific delimiters to accurately extract the data.</p> 
+                </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Establishing Relationships</p>
+                    <p>Following consistent nomenclature across all tables, relationships were established to enable cross-referenced analysis across datasets.</p>
+                    <img class="img-fluid" src="../assets/infographics/universalExport/relationship.png" alt="relationships"> 
+                </div>
+            </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Standardized Edits Across All Datasets</p>
+                <ul>
+                    <li><span style="font-weight: 600;">Column Formatting: </span>Column names were standardized to uppercase with underscores for uniformity, aiding in automatic table relationships in Power BI.</li>
+                    <li><span style="font-weight: 600;">Data types: </span>Amount columns were set to Decimal in GBP (£) to reflect the UK-based operations. ID columns were set to Text format to facilitate table linking.</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Table Specific Customizations</p>
+                <div>
+                <p class="bg-light border" style="width:240px">Customers Table</p>
+                <ul>
+                    <li>Additional data type allocations were applied to all columns.</li>
+                    <li>The ‘address’ column was split into CITY and COUNTRY for granular location analysis.</li>
+                    <li>The ‘new_customer’ column was converted to a boolean format, while redundant information was managed without deletion. </li>
+                </ul>
+                </div>
+
+                <div>
+                <p class="bg-light border" style="width:240px">Logistics Table</p>
+                <ul>
+                    <li>This table was parsed with a semicolon delimiter.</li>
+                    <li>The OFFICE_LOCATION column was separated into CITY and COUNTRY. </li>
+                    <li>Missing contact details in a few records were deemed non-impactful for analysis and retained.</li>
+                </ul>
+                </div>
+
+                <div>
+                <p class="bg-light border" style="width:240px">Products Table</p>
+                <ul>
+                    <li>Adjusted PRICE and COST columns for standardization and identified outliers (e.g., extreme prices) for recalibration. Missing values in PRODUCT_COLOUR were filled by extracting color information from product names.</li>
+                </ul>
+                </div>
+
+                <div>
+                <p class="bg-light border" style="width:240px">Transactions Table</p>
+                <ul>
+                    <li>Updated ID columns and amount fields. DATE was set to DD/MM/YYYY format for consistency. A WEEK_NUMBER column was generated from the transaction date to analyze weekly trends.</li>
+                </ul>
+                </div>
+
+                <div>
+                <p class="bg-light border" style="width:240px">Salespeople Table</p>
+                <ul>
+                    <li>Minor adjustments were made, including setting SALES_ID to Text format.</li>
+                </ul>
+                </div>
+            </div>
+                </div>
+            </div>
+
+             <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Calculated Measures, Columns, and Data Groups</p>
+                <p>Custom calculations were developed using DAX to enhance analysis across tables.</p>
+                <ul>
+                    <li><span style="font-weight: 600;">Products Table: </span>New columns such as TOTAL_PROFIT, TOTAL_QUANTITY, and MARGIN_PERCENTAGE were added to monitor product performance. </li>
+                    <li><span style="font-weight: 600;">Transactions Table: </span>TRANSACTION_PROFIT and WEEK_NUMBER columns helped in detailed analysis by transaction period.</li>
+                    <li><span style="font-weight: 600;">Logistics Table: </span>A data grouping was created to differentiate exclusive air shipments, supporting a sustainability impact analysis.</li>
+                    <li><span style="font-weight: 600;">Customers Table: </span>A measure to track customer acquisition in 2023 was added to evaluate growth.</li>
+                </ul>
+                </div>
+            </div> 
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">    
+                <p class="dream-subhead">Accessibility Considerations</p>
+                <p>Accessible color schemes were applied to ensure that reports are visually clear and suitable for black-and-white printing for easier sharing across teams.</p>
+            </div>
+            </div>
+
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead2"><u>Universal Export's Annual Investor Review,2023</u></p>
+                <p>Dear esteemed investors,</p>
+                <p>We are pleased to present the annual report for the fiscal year 2023 on behalf of Universal Export.  It provides a comprehensive overview of the company’s operational status, financial achievements, and major accomplishments during the last year.</p>
+                <p>The report will throw light on the insights into the company’s sales and profit, diverse products analysis and the share contributed by each. We have provided both a high-level summary and a detailed examination of the trends and patterns identified over weeks and months. This comprehensive approach will allow to grasp our company's financial progress over the course of the year more comprehensively. Additionally, the report will highlight the outcomes of our sustainable initiatives implemented during the reporting period.</p>
+            </div>
+        </div>
+
+              <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Universal Export’s sales and profit trend in 2023</p>
+                <img class="img-fluid" src="../assets/infographics/universalExport/data viz-1.png" alt="Universal Export’s sales and profit trend in 2023">
+
+                <p>Throughout the fiscal year 2023, sales and profit exhibited fluctuations, showcasing notable highs and lows. August recorded the highest sales at 9711 units, while February marked the lowest at 8251 units exported. Surprisingly, profit trends did not mirror sales trends.</p>
+                <p>February, the lowest-performing month, saw profits at GBP 271M, contrasting with August's peak sales. The correlation between higher sales and increased profitability underscores the significance of sales performance in driving overall profitability. This highlights the importance of associated products contributing to sales and profit figures, emphasizing the dynamic relationship between sales volume and financial outcomes.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Bifurcation of product categories and analysis</p>
+
+                <p>Universal Export's diverse product range includes t-shirts, hoodies, and fake knitted cardigans, among others. The sales and profit figures mentioned earlier stem from the sale of these varied products. T-shirts and hoodies emerge as the top-selling categories, with a slight difference of 100 units between them, selling 28.4k and 28.3k units, respectively. These product categories exhibit significant demand among customers. In contrast, sales of cardigans stand at 9.1k units, while polo shirts, sweatshirts, and jackets occupy the middle ground with a combined total of 44.4k units sold in 2023. This analysis highlights the varying levels of demand for different product categories within Universal Export's portfolio.</p>
+                <img class="img-fluid" src="../assets/infographics/universalExport/data viz-2.png" alt="Bifurcation of product categories and analysis">
+
+                <p>It's notable that the sales figures for T-Shirts and Hoodies are remarkably close, indicating strong demand for these products across Universal Export's customer base. Conversely, the significant gap between the top-selling and lower-performing categories suggests potential opportunities for product development, marketing strategies, or pricing adjustments to boost sales of the weaker product lines.</p>
+                <p>The primary product categories are ranked by sales quantity, with T-Shirts and Hoodies emerging as the top performers. Within these categories, the Unisex T-Shirt and Standard Hoodie subcategories generate the highest revenues, with £120M and £79M respectively.</p>
+                <p>The analysis of profitability indicates that Hoodies and T-Shirts are the most lucrative categories, boasting margins of 33.6% and 33.3%, respectively. Conversely, cardigans exhibit the lowest profitability, with a margin of 15.32% and total profit of £329.93M. On further breakdown of profit margin reveals sweatshirts as the top contributor, with a profit margin of 18.21%.</p>
+                <p>In terms of total sales, product subcategories collectively generated £56M in revenue, with Military Jackets yielding the lowest revenue at £26M, indicating weaker performance. This profitability analysis offers valuable insights into each product line's financial performance, with Hoodies (£884.27M) and T-Shirts (£885.52M) emerging as the most profitable categories. Unisex T-Shirts notably stand out as customer favourites, contributing significantly to Universal Export's global success with sales totalling £961M.</p>
+                <p>Our robust sales and profit figures, particularly in the T-shirt and Hoodie categories, underscore our market dominance and customer appeal. However, challenges remain, such as the need to revitalize underperforming product lines like cardigans and military jackets.</p>
+            </div>
+        </div>
+
+             <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Geographic sales performance comparison</p>
+                <p>Universal Export's global success can be attributed to its extensive export operations, reaching various countries worldwide. The sales insights across different countries reveal interesting trends. The United Kingdom and Ireland emerge as the largest contributors, with the UK alone generating £1026M in sales and £889M in profit, surpassing other European nations significantly. Several Western and Central European countries record sales ranging from £200M to £250M, while countries like Austria and Portugal exhibit lower sales below £100M. Similar profit patterns are observed. However, it's important to acknowledge the environmental impact associated with global exports, considering transportation modes such as air, sea, and land routes utilized for delivering packages to destination countries.</p>
+                <img class="img-fluid" src="../assets/infographics/universalExport/data viz-3.png" alt="Geographic sales performance comparison">
+            </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8">
+                <p class="dream-subhead">Small steps towards sustainable environment</p>
+                <p>In total, 40.33M quantities of products have been exported worldwide. It is analysed that the most preferred mode of shipment is air. Analysis reveals that the preferred mode of shipment is air, despite its rapid delivery but concerning environmental implications.  In order to tackle the environmental impact and take small steps towards a sustainable future, the management took decision to commit to minimizing the utilization of air transportation services in particular after 1st July 2023.</p>
+                <img class="img-fluid" src="../assets/infographics/universalExport/data viz-4.png" alt="Small steps towards sustainable environment">
+                <p>In the previous year, a total of 18.87 million packages were shipped via air, the most favoured mode among air, land, and sea. Following the decision, a notable impact has been observed from this initiative. There has been a 24% reduction in the total products sent via air in the second half of 2023 compared to the first half of the year, aligning with our future objectives. This illustrates our commitment to responsible business practices and environmental stewardship.</p>
+            </div>
+            </div>
+
+             <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Conclusion</p>
+                <p>In conclusion, Universal Export's performance in 2023 reflects both strengths and areas for improvement. Additionally, while our global exports have propelled us to success, they come with environmental costs, prompting us to commit to reducing air transportation usage for sustainability. The significant reduction in air shipments in the latter half of 2023 demonstrates our dedication to responsible practices. Overall, our commitment to innovation, customer satisfaction, and environmental stewardship positions us well for continued success in the future. We remain focused on leveraging our strengths and addressing weaknesses to deliver sustainable growth and value to our shareholders.</p>
+            </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead2"><u>Beyond the Figures: A Holistic Review of 2023's Sales Efforts</u></p>
+                <p>The secret behind the massive success of any company lies in the hands of its employee’s hard work. All those efforts that an employee puts forward needs to be acknowledged. In this review, we present forward the best salesperson of Universal Export in the year 2023. The performance of the salesperson will be awarded with a promotion to head and the deputy head of the sales department.  The assessment of the salesperson will be carried out based on the below discussed criteria: </p>
+
+                <ul>
+                    <li>Sales and profit generated by the top performing salesperson.</li>
+                    <li>Acquisition of new customer in 2023.</li>
+                    <li>Understanding of company profits margin and contribution by salesperson.</li>
+                </ul>
+            </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">   
+                <p class="dream-subhead">Contribution to sales and profit by salesmen</p>
+                <p>In terms of total sales revenue generated by the top 5 salespeople, the rankings are Salesperson 22 who is a male lead at £461M (27.44%), followed by a female Salesperson 12 at third place generating £280M (16.65%), Salesperson 11 (Female) at £352M (20.94%), and Salesperson 7 (Female) at £309M (18.37%).</p>
+                <p>Salesperson 22 once again takes the lead in profitable business deliverables, delivering an impressive £310M in profits across various product lines. Salesperson 8 contributed £184M to the company's profits, while Salesperson 12 generated £179M. Salespersons 11 and 7 rank fourth and fifth, with profits of £102M and £70M, respectively.</p>
+                <p>It is noteworthy that the profit margins achieved by these top salespeople are consistently high, ranging from 86.25% to 86.86%, indicating efficient sales strategies and pricing models across the board.</p>
+                <img class="img-fluid" src="../assets/infographics/universalExport/data viz-5.png" alt="Contribution to sales and profit by salesmen">
+                <p>The data reveals significant insights into the profit margins and sales margins achieved by each salesperson. Sales_id 12 emerges out to be a star performer among all the female employees generating 86.76% profit margins for the company while no doubt sales_id 22 still continues to outperform all the others.</p>
+                </div>
+            </div>
+
+             <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">New customer acquisitions – 2023</p>
+                    <img class="img-fluid" src="../assets/infographics/universalExport/data viz-6.png" alt="Customer acquisitions in 2023">
+                    <p>The financial year 2023 saw new developments in its internal operations as well as expansion in customer base as well. Some salespersons went above and beyond to seal the deal with the new customer this year. An addition of 4 new customer is seen in 2023 making a total of 48 customers to handle. Sales_ID 22, 12, 5, and 4 managed to acquire new customers which include Charis Vision by sales_id 22, Kuba by sales_id 4, Liberte by sales_id 12 and NBF customer by sales_id 5. Of the 4 customers acquired in the last year, 2 customers belong to the retail business sector and other two are from bulk and other sectors.</p>
+                    <p>Based on this comprehensive analysis, which considers both sales revenue and profitability, Salesperson 22 stands out as the strongest candidate for promotion to the head of the sales department. Their exceptional performance in driving sales and generating substantial profits across various product lines makes them an ideal choice for this leadership role.</p>
+                    <p>For the position of deputy head of the sales department, the management team could consider either Salesperson 8 or Salesperson 12. Both individuals demonstrated remarkable sales achievements and contributed significantly to the company's profitability, making them suitable candidates for this supporting leadership role.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-8">
+                <p class="dream-subhead">Conclusion</p>
+                <p>To conclude, there are two star performers reflecting in the analysis of all the salespersons based on their performance. It would be encouraged to give promotion to the employees who brought in new customers in the year 2023 - Sales_ID 22 and Sales_ID 12. Their promotions will be a motivation for future excellence and prosperity of Universal Exports.</p>
+            </div>
+        </div>
+        </section>
+
+        <section>
+            <div class="text-center">
+               <img src="../assets/divider.svg" alt="Divider" class="img-fluid">  
+               <p class="go-back h5 sub-head">Care to see another project?</p>
+               <a class="back-btn btn mt-2 mb-4" href="../index.html#portfolio">Browse Portfolio</a>
+            </div>
+         </section>
+      <!-- footer - CTAs -->
+      <footer id="footer">
+        <div class="container text-center">
+           <p class="foot-subhead">Come say hi!</p>
+           <p class="foot-head">Let's talk</p>
+           <div>
+              <a class="btn foot-btn" href="https://www.linkedin.com/in/priyanka-ukande/" target="_blank">
+                 <img src="../assets/linkedin.svg" alt="Linkedin" class="linkedin-icon"><br>
+                 Let's Connect
+              </a>
+
+              <a class="btn foot-btn" href="mailto:prianka.ukande@gmail.com" target="_blank">
+                 <img src="../assets/gmail.svg" alt="Gmail" class="gmail-icon"><br>
+                 Drop a mail
+              </a>
+           </div>
+        </div>
+     </footer>

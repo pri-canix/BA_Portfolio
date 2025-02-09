@@ -184,6 +184,7 @@ header {
 }
 
 .card-body {
+	min-height: 210px;
 	padding: 2.5rem;
 	border: 1px solid #eee;
 }
