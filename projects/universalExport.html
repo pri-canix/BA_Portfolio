@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="../css/portfolio.css" rel="stylesheet">
       <link rel="icon" type="image/x-icon" href="../assets/logo2.svg">
-      <title>Forecasting Projects</title>
+      <title>Data visualisations</title>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -62,7 +62,48 @@
 
       <!-- body content -->
       <section id="main-content">
-            <div class="row justify-content-center">
+
+        <div class="row justify-content-around">
+                <div class="col-md-8">
+                    <div>
+                    <p class="dream-subhead">Annual Shareholder Report - Universal Export (2023)</p>
+                        <p>This analysis comprises two reports for Universal Export, a Southampton-based manufacturer of unbranded apparel (t-shirts, hoodies, and jackets) for retailers and wholesalers who customize them with their own designs. The first report serves as an annual shareholder update, while the second evaluates sales team performance for internal promotion considerations.</p>
+                        <p><b>Purpose: </b>To provide shareholders with a comprehensive view of the UK-based unbranded garment manufacturer's performance, focusing on:</p>
+                        <ul>
+                            <li>Sales and profit trends (weekly/monthly analysis)</li>
+                            <li>Product portfolio performance</li>
+                            <li>International sales comparison</li>
+                            <li>Progress on reducing air shipments (July-December 2023)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                    <p class="dream-subhead">Sales Team Performance Review 2023 - Universal Export</p>
+                        <p>This review evaluates top-performing salespeople for promotion to Head and Deputy Head of Sales. Assessment criteria include sales and profit generation, new customer acquisition in 2023, and demonstrated understanding of profit margins. The selected candidates will be recognized for their exceptional contribution to Universal Export's success.</p>
+                        <p><b>Purpose: </b>To evaluate and recognize top salespeople for departmental leadership positions based on:</p>
+                        <ul>
+                            <li>Revenue and profit generation</li>
+                            <li>New customer acquisition</li>
+                            <li>Understanding and contribution to profit margins</li>
+                        </ul>
+                    </div>
+
+                        </div>
+                    </div>
+
+
+        <div class="row justify-content-around mt-4">
+                <div class="col-md-8">
+                        <p class="dream-subhead">project brief</p>
+                        <div class="dream-text">
+                            <p><span>Role -</span> Business Analyst</p>
+                            <p><span>Skills -</span> Data Analytics, PowerBI</p>
+                            <p><span>Timeline -</span> 1 month</p>
+                        </div>
+                    </div>
+        </div>
+
+            <div class="row justify-content-center mt-4">
                 <div class="col-md-8">
                 <p class="dream-subhead">Data Extraction and Handling</p>
                     <p>The ‘GarmentFactoryDataset.zip’ file from Universal Export included five data files in various formats, covering details on the company’s transactions, customers, products, logistics, and salespeople. While the ‘xlsx’ and ‘csv’ files were readily accessible in Power BI, careful extraction was required for other formats. For example, handling files like ‘Salespeople.json’ and ‘Logistics.txt’ required using specific delimiters to accurately extract the data.</p> 
@@ -92,7 +133,7 @@
                 <div class="col-md-8">
                 <p class="dream-subhead">Table Specific Customizations</p>
                 <div>
-                <p class="bg-light border" style="width:240px">Customers Table</p>
+                <p class="bg-light border" style="width:160px">Customers Table</p>
                 <ul>
                     <li>Additional data type allocations were applied to all columns.</li>
                     <li>The ‘address’ column was split into CITY and COUNTRY for granular location analysis.</li>
@@ -101,7 +142,7 @@
                 </div>
 
                 <div>
-                <p class="bg-light border" style="width:240px">Logistics Table</p>
+                <p class="bg-light border" style="width:160px">Logistics Table</p>
                 <ul>
                     <li>This table was parsed with a semicolon delimiter.</li>
                     <li>The OFFICE_LOCATION column was separated into CITY and COUNTRY. </li>
@@ -110,21 +151,21 @@
                 </div>
 
                 <div>
-                <p class="bg-light border" style="width:240px">Products Table</p>
+                <p class="bg-light border" style="width:160px">Products Table</p>
                 <ul>
                     <li>Adjusted PRICE and COST columns for standardization and identified outliers (e.g., extreme prices) for recalibration. Missing values in PRODUCT_COLOUR were filled by extracting color information from product names.</li>
                 </ul>
                 </div>
 
                 <div>
-                <p class="bg-light border" style="width:240px">Transactions Table</p>
+                <p class="bg-light border" style="width:160px">Transactions Table</p>
                 <ul>
                     <li>Updated ID columns and amount fields. DATE was set to DD/MM/YYYY format for consistency. A WEEK_NUMBER column was generated from the transaction date to analyze weekly trends.</li>
                 </ul>
                 </div>
 
                 <div>
-                <p class="bg-light border" style="width:240px">Salespeople Table</p>
+                <p class="bg-light border" style="width:160px">Salespeople Table</p>
                 <ul>
                     <li>Minor adjustments were made, including setting SALES_ID to Text format.</li>
                 </ul>
